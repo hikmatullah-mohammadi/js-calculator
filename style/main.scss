@@ -1,0 +1,152 @@
+$bg-color-primary: rgb(130, 130, 214);
+$bg-color-secondary: rgb(169, 236, 160);
+$border-color: red;
+
+@mixin flex-center ($flex-deriction) {
+  display: flex;
+  flex-direction: $flex-deriction;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color-secondary;
+}
+#header {
+  background: $bg-color-primary;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px red;
+  height: 80px;
+  padding-top: 22px;
+}
+button {
+  border: none;
+  border-top: solid 1px $border-color;
+  border-left: solid 1px $border-color;
+  &:not([id='equal']) {
+    background-color: $bg-color-secondary;
+  }
+  &:hover {
+    background-color: $bg-color-primary;
+    color: white;
+  }
+}
+
+main {
+  margin: 20px auto;
+  @include flex-center(column);
+  width: 70%;
+  height: 480px;
+  border: 1px $border-color solid;
+}
+
+#display {
+  background-color: $bg-color-primary;
+  height: 80px;
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow:
+  0 0 0 2px $border-color,
+  0 0 0 4px $bg-color-primary;
+  text-shadow: 1px 1px red;
+  color: white
+}
+.calc-btns {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  * {
+    font-size: 30px;
+  }
+}
+
+.num-btns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: repeat(4, 70px);
+  * {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  #zero {
+    grid-column: 2/3;
+  }
+}
+
+.control-btns {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  * {
+    font-size: 30px;
+  }
+  #equals {
+    margin-top: -70px;
+    background-color: blue;
+    color: white;
+    font-size: 50px;
+    &:hover {
+      background-color: $bg-color-primary;
+    }
+  }
+  #clear {
+    margin-top: -70px;
+  }
+  #clear:hover {
+    background-color: $border-color;
+  }
+
+  #decimal {
+    font-weight: bold;
+  }
+}
+
+footer {
+  height: 50px;
+  background-color: $bg-color-primary;
+  @include flex-center(none);
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px red;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 767px) {
+  main {
+    width: 60%;
+  }
+}
+@media (min-width: 920px) {
+  main {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px){
+  #header {
+    height: 135px;
+    padding-top: 50px;
+  }
+  main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+  }
+}
+

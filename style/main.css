@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #a9eca0;
+}
+
+#header {
+  background: #8282d6;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px red;
+  height: 80px;
+  padding-top: 22px;
+}
+
+button {
+  border: none;
+  border-top: solid 1px red;
+  border-left: solid 1px red;
+}
+
+button:not([id='equal']) {
+  background-color: #a9eca0;
+}
+
+button:hover {
+  background-color: #8282d6;
+  color: white;
+}
+
+main {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  height: 480px;
+  border: 1px red solid;
+}
+
+#display {
+  background-color: #8282d6;
+  height: 80px;
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-box-shadow: 0 0 0 2px red, 0 0 0 4px #8282d6;
+          box-shadow: 0 0 0 2px red, 0 0 0 4px #8282d6;
+  text-shadow: 1px 1px red;
+  color: white;
+}
+
+.calc-btns {
+  width: 100%;
+  height: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+}
+
+.calc-btns * {
+  font-size: 30px;
+}
+
+.num-btns {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (33.3%)[3];
+      grid-template-columns: repeat(3, 33.3%);
+  -ms-grid-rows: (70px)[4];
+      grid-template-rows: repeat(4, 70px);
+}
+
+.num-btns * {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.num-btns #zero {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.control-btns {
+  width: 100%;
+  height: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (33.33%)[3];
+      grid-template-columns: repeat(3, 33.33%);
+}
+
+.control-btns * {
+  font-size: 30px;
+}
+
+.control-btns #equals {
+  margin-top: -70px;
+  background-color: blue;
+  color: white;
+  font-size: 50px;
+}
+
+.control-btns #equals:hover {
+  background-color: #8282d6;
+}
+
+.control-btns #clear {
+  margin-top: -70px;
+}
+
+.control-btns #clear:hover {
+  background-color: red;
+}
+
+.control-btns #decimal {
+  font-weight: bold;
+}
+
+footer {
+  height: 50px;
+  background-color: #8282d6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: none;
+          flex-direction: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 1px red;
+  font-size: 1.5em;
+}
+
+@media (min-width: 767px) {
+  main {
+    width: 60%;
+  }
+}
+
+@media (min-width: 920px) {
+  main {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  #header {
+    height: 135px;
+    padding-top: 50px;
+  }
+  main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
